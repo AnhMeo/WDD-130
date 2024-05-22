@@ -1,0 +1,35 @@
+body{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    height: 100%;
+}
+.circles{
+    width: 100%;
+    margin: 0px;
+}
+.bottom{
+    background-color: grey;
+    text-align: center
+}
+.desk{
+    height: 150px;
+    width: 150x;
+    border-radius: 50%;
+    margin: 70px;
+    border: 10px solid #494747;
+}
+.graphic{
+    height: 150px;
+    width: 150x;
+    border-radius: 50%;
+    margin: 70px;
+    border: 10px solid #494747;
+} 
+.person{
+    height: 150px;
+    width: 150x;
+    border-radius: 50%;
+    margin: 70px;
+    border: 10px solid #494747;
+}

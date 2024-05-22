@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
+
 #content{
     max-width: 1600px;
     margin: 0 auto;
@@ -5,13 +7,25 @@
 }
 .logo{
     width: 80px;
+    padding-top: 5px;
+}
+.home-title {
+    font-family: 'Rock Salt', 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-top: 10px;
+}
+nav{
+    background-color: #8ecae6;
+    padding: 34px;
+    border-radius: 15px;
+    border: 5px solid #00304a;
 }
 nav a{
     text-align: center;
-    background-color: #8ecae6;
     color: #25156f;
     text-decoration: none;
     font-size: 1.5em;
+    padding: 35px;
 }
 nav a:hover{
     color: #f27817;
@@ -33,14 +47,21 @@ nav a:hover{
 main section{
     text-align: center;
 }
+main section img {
+    box-sizing: border-box;
+}
 #background{
     height: 725px;
     background-color: #8ecae6;
 }
 body{
     background-color: #8ecae6;
-    padding: 4em;
+    padding: 0;
+    margin: 0;
     font-size: 18px;
+}
+h2{
+    margin: 0;
 }
 header {
     padding: 1em;
@@ -52,6 +73,10 @@ header {
     background-color: #8ecae6;
     color: #25156f;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
 }
 .book:hover, .join:hover{
     color: #f27817;
@@ -60,16 +85,23 @@ header {
 }
 .msg{
     background-color: #8ecae6;
+    line-height: 1.5em;
+    padding: 35px;
 }
 .msg h2{
     color: #25156f;
+    font-family: 'Rock Salt', 'Montserrat', sans-serif;
 }
 .msg p{
     color: #25156f;
+    font-size: .8em;
+    padding-bottom: 15px;
 }
 footer{
     background-color: #8ecae6;
     color: #25156f;
+    padding: 25px 50px;
+    margin-top: 200px;
 }
 footer a{
     color: #25156f;
@@ -83,6 +115,16 @@ footer p{
 footer p a:hover{
     text-decoration: underline;
 }
-.icon{
+footer .social img{
+    padding-top: 15px;
+}
+.icon-image {
     width: 80px;
+    padding-top: 10px;
+}
+.home-grid .rivers-card, .camping-card, .rapids-card{
+    margin: 200px 0;
+}
+.card-image {
+    border: 10px solid #25156f;
 }
