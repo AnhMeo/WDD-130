@@ -29,11 +29,67 @@
         </p>
 
         <div class="tab">
+            <button class="tablinks" onclick="openProject(event, 'Shopping Cart')">Shopping Cart</button>
             <button class="tablinks" onclick="openProject(event, 'Wordle')">Wordle Project</button>
             <button class="tablinks" onclick="openProject(event, 'Pokemon Adventure')">Pokemon Adventure</button>
             <button class="tablinks" onclick="openProject(event, 'Meal Price')">Meal Price</button>
           </div>
           
+          <div id='Shopping Cart' class='tabcontent'>
+            <h3>Shopping Cart</h3>
+            <p>This is a shopping cart project that I made using python. It showcases the use of for loops and while loops, while also synchronizing lists.</p>
+            <pre><code>
+                menuSelection = ''
+                cartItems = []
+                cartPrices = []
+                total = 0
+
+                while menuSelection != '5':
+                    print('''Please select one of the following: 
+                        1. Add item
+                        2. View cart
+                        3. Remove item
+                        4. Compute total
+                        5. Quit''')
+                    menuSelection = input('Please enter an action: ')
+                    if menuSelection == '1':
+                        newItem = input('Please enter the name of the item you want to add: ')
+                        newPrice = float(input(f'what is the price of {newItem}? '))
+                        cartItems.append(newItem)
+                        cartPrices.append(newPrice)
+                        print()
+                    elif menuSelection == '2':
+                        print('The contents of the shopping cart are: ')
+                        for i in range(len(cartItems)):
+                            item = cartItems[i]
+                            price = cartPrices[i]
+                            print(f'{i+1}. {item} - {price}')
+                            print()
+                    elif menuSelection == '3':
+                        removeItem = int(input('Which item would you like to remove? '))
+                        removeIndex = removeItem - 1
+                        listLength = len(cartItems)
+                        if removeItem > listLength:
+                            print('Sorry, that is not a valid item number.')
+                            print()
+                        else:
+                            cartItems.pop(removeIndex)
+                            cartPrices.pop(removeIndex)
+                            print('Item removed.')
+                            print()
+                    elif menuSelection == '4':
+                        for i in cartPrices:
+                            total += i 
+                        print(f'The total of all the items in the cart is ${total}.')
+                        print()
+
+
+
+
+
+
+            </code></pre>
+          </div>
           
           <div id="Wordle" class="tabcontent">
             <h3>Wordle Project</h3>
