@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <a id = 'logo-link' href='index.html'>
+            <img class = 'logo' src='images/logo.png' alt = 'logo-image'>
+        </a>
+        <nav>
+            <a href='index.html'>Home</a>
+            <a href='portfolio.html'>Project Portfolio</a>
+            <a href='achievements.html'>Achievements</a>
+        </nav>
+    </header>
+    <main>
+
+        <h4>"...by their fruits ye shall know them" -Matthew 7:20</h4>
+        <p>
+        I believe that a good way to get to know someone is by examining their work. As you go through the projects I have listed here, I hope that you will get a feel for the thought that goes into my  work and the level of quality that I hold myself to. 
+        (Following this, there will be imbeds of code and screenshots of projects that have been completed.)
+        </p>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openProject(event, 'Wordle')">Wordle Project</button>
+            <button class="tablinks" onclick="openProject(event, 'Pokemon Adventure')">Pokemon Adventure</button>
+            <button class="tablinks" onclick="openProject(event, 'Meal Price')">Meal Price</button>
+          </div>
+          
+          
+          <div id="Wordle" class="tabcontent">
+            <h3>Wordle Project</h3>
+            <p>This is a coding project that allows you to play a game that is similar to Wordle</p>
+            <pre><code class="python">
+                import random
+
+                play = 'yes'
+
+                while play == 'yes':
+                    secrets = ['vietnam', 'japan', 'america', 'philippines', 'canada', 'thailand', 'korea', 'spain', 'china', 'mexico', 'italy', 'france', 'cambodia', 'laos', 'singapore', 'malaysia', 'portugal', 'egypt', 'tunisia', 'argentina', 'brazil', 'venezuela', 'croatia', 'cyprus', 'iceland', 'ireland', 'denmark', 'saudi arabia', 'qatar']
+                    secret = random.choice(secrets)
+                    secretNum = len(secret)
+                    guesses = 0
+                    print('Welcome to the word guessing game!')
+
+                    print('Here is your hint: ')
+                    for i in range(secretNum):
+                        print('_ ', end='')
+                    print()
+                    print()
+                    guess = input('Enter your guess: ')
+                    guesses = guesses + 1
+                    while(guess != secret or len(guess) != secretNum):
+                        if len(guess) != secretNum:
+                            print('The number of letters must be ' + str(secretNum) + ' letters long. Try again.')
+                        else:
+                            print('Here is your hint:')
+                            for i in range(secretNum):
+                                if(guess[i] == secret[i]):
+                                    print(guess[i].upper() + ' ', end='')
+                                elif(guess[i] in secret):
+                                    print(guess[i].lower() + ' ', end='')
+                                else: print('_ ', end='')
+                        print()
+                        print()
+                        guess = input('Enter your guess: ')
+                        guesses = guesses + 1        
+                        print()
+                    print('You guesed it in ' + str(guesses) + ' guesses!' )
+                    play = input("Do you want to play again? (yes / no) ")
+            </code></pre>
+          </div>
+          
+          <div id="Pokemon Adventure" class="tabcontent">
+            <h3>Pokemon Adventure</h3>
+            <p>This is a Pokemon adventure game that I coded in python</p>
+            <pre><code class="python">
+                print(f'''Welcome, adventurer.
+                    Before you, there are three sphere-shaped capsules.
+                    They are called Pokeballs. Each one contains a pokemon.
+                    Which pokemon do you choose? 
+                    The FIRE type pokemon, Scorbunny?
+                    The WATER type pokemon, Sobble?
+                    The GRASS type pokemon, Grookey?''')
+
+                starter_pokemon = input('Please choose your pokemon: ')
+
+                if starter_pokemon.upper() == 'FIRE':
+                    print(f'Congratulations! You chose Sorbunny, the {starter_pokemon.lower()} type pokemon!')
+                    print(f'''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠋⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⢤⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠁⠀⠀⠈⡇⠀⠀⠀⠀⠀⣠⠴⠊⠉⠀⢸⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⡇⠀⠀⢀⡴⠊⠁⠀⠀⠀⠀⡼⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⢰⡃⠀⠀⠀⠀⠀⡇⢀⡴⠋⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⣜⣸⣀⣤⠤⠤⠤⣧⠞⠦⠤⣤⣤⣀⡀⠀⢀⡟⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⡯⠥⢼⢹⠒⠒⠲⠛⠒⣲⠞⢡⠧⢄⣉⣑⡞⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⡇⠘⡆⢠⠇⢀⡞⠁⢠⠎⠀⠀⣠⣏⡠⢤⡀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⢳⠀⢇⠀⡇⣸⢀⡎⠀⡰⠋⠀⠐⠉⢁⣠⠔⠋⠁⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠈⢇⠹⡄⡇⡇⣼⣠⠞⠀⣐⡦⠴⠚⠉⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡦⠟⠛⠋⠙⠓⠾⢭⡁⠀⠀⣠⠔⣶⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⡠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡞⠁⢀⣟⡠⠤⢴⠀⠀⠀
+                ⠀⠀⠀⠀⠀⢠⠞⠁⠀⣀⠤⠖⠒⣆⢠⡤⣤⠀⠀⢸⠀⣠⠞⠉⠀⢀⡏⠀⠀⠀
+                ⠀⠀⢠⣄⢀⡏⠀⢠⠊⠀⠀⠀⣀⣸⢿⡟⣻⠇⠀⠀⠀⠁⠀⠀⢀⠞⠀⠀⠀⠀
+                ⠀⠀⠸⡌⢿⠰⣔⣲⣇⡴⢿⠋⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⣠⠴⠋⠀⠀⠀⠀⠀
+                ⣏⠉⠙⠳⢄⠘⣿⣻⠇⠀⢀⡷⠖⣾⠋⠉⢽⡆⠀⠀⣠⢺⠃⠀⠀⠀⠀⠀⠀⠀
+                ⠈⢦⡀⠀⠀⠀⡀⠀⠀⢰⠛⠒⠚⠁⣠⢤⡞⠀⣠⢞⡵⢃⡠⠴⠒⠊⠉⣙⡛⡆
+                ⠀⠀⠉⠁⠒⠉⠳⣄⡀⠀⠑⠦⢴⣏⠤⠪⠔⣫⣵⡿⠛⢁⣀⣀⡀⠀⠀⣠⠜⠃
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠑⠒⠒⣺⡷⣦⢰⣋⡽⠋⢀⡴⢉⡧⠬⣽⢳⡉⠀⠀⠀
+                ⠀⠀⠀⠀⢀⡤⠖⠒⠋⠉⠉⠉⢉⣭⠙⠈⠁⠀⢻⣿⣱⣻⣗⣀⣟⣒⡇⠀⠀⠀
+                ⠀⠀⠀⢰⠛⡡⠀⠀⢀⣠⠴⠚⠉⡇⠀⠀⠀⢠⢋⢹⡄⠈⠉⠉⠉⢸⠁⠀⠀⠀
+                ⠀⠀⠀⠈⠛⠒⠒⠚⠉⠀⠀⠀⠀⢻⠀⠀⠀⣸⣼⣾⢻⠤⠤⠤⢤⡇⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢏⣉⠁⣴⠯⠿⣿⡀⠀⠀⣸⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢦⠸⡄⠀⢱⣩⠉⠉⣹⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⡹⡦⣄⠑⠦⠴⠋⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡓⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⢳⡀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⣇⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⢀⣀⣀⣸⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡺⡏⡘⡆⢸⠃⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠷⠤⠽⠋⠀⠀⠀⠀⠀⠀''')
+                    print(f'''You are so happy to have your new pokemon friend. You start to think about all of the great adventures
+                        will have together, and all of a sudden
+                        
+                        
+                        
+                        
+                        LOOK OUT!
+                        
+                        WHAT IS THAT???
+                        
+                        
+                        A WILD POKEMON APPEARED!
+                        
+                        ''')
+                    wild_encounter = input('What are you going to do? BATTLE or RUN? ')
+                    if wild_encounter.upper() == 'BATTLE':
+                        print(f'A wild Pansage appeared! That is a grass type pokemon, so your {starter_pokemon} type moves will be super effective!')
+                        scorbunny_moves = input('What move will Scorbunny use? EMBER of TACKLE?')
+                        if scorbunny_moves.lower() == 'ember':
+                            print("It's super effective! The wild Pansage fainted. Scorbunny leveled up!")
+                        elif scorbunny_moves.lower() == 'tackle':
+                            print('The wild pansage ran away!')
+                        else:
+                            print('That is not a move in your moveset!')
+                    elif wild_encounter.upper() == 'RUN':
+                        print('You got away safely')
+                    else:
+                        print('That is not one of the choices')
+                elif starter_pokemon.upper() == 'WATER':
+                    print(f'Congratulations! You chose Sobble, the {starter_pokemon.lower()} type pokemmon! ')
+                    print(f'''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⡐⠐⠐⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠊⡀⠂⠄⢁⠂⡈⡂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠴⠑⢈⠠⠐⢈⠀⢂⠠⢐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠣⢈⠐⡀⢂⠨⢀⠈⠠⠀⡢⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣜⠐⡀⢂⠐⡐⢀⢂⠐⡈⠄⠱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣺⢁⠐⡐⠐⢐⠀⡂⠄⢂⠐⢨⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⡃⠄⠂⠄⡁⢂⠐⠠⠈⠄⡌⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢐⡽⡪⡠⠁⡂⠂⡂⠌⡈⢌⠌⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣺⠸⡐⡅⠠⠁⠄⢂⠔⠡⠨⠠⠠⠠⠡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢮⢃⢇⢎⠄⠡⢈⠐⡈⠨⠐⠠⠁⡂⠕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⣳⢕⠕⡜⡌⡐⠐⡐⠀⢅⢨⠠⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⡠⠄⡂⡋⡃⡃⡓⠼⡀⠃⠂⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⡐⠌⠌⡐⢐⢐⢐⢐⠐⡐⠠⠡⡈⡊⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢔⢑⠐⠄⠅⠅⡂⠅⡐⠄⡂⠌⠄⠅⠅⡂⢌⠌⡌⡒⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⢌⣂⡢⢡⠡⠡⢁⢂⢅⠂⠅⡂⠅⡡⠡⡁⡢⡡⠊⢔⠨⢂⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠢⡑⢁⠀⠈⢂⢊⠌⡄⠃⠐⡅⠡⡂⢅⠢⡑⠈⠀⠈⠸⡠⢡⠡⡑⢔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠣⡩⣰⢅⡼⡄⢨⠂⡃⠠⠁⠂⡈⠱⢨⢐⢅⣆⢩⢦⠀⠀⢈⠢⡑⡨⢂⠕⢀⢀⠠⡀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡪⠨⠢⡯⠀⡯⡇⢐⠠⠀⠂⡈⠠⠀⠂⠐⠈⡎⡞⠑⣯⡂⠀⠀⡕⡐⠌⠔⠌⡇⡊⢌⢂⠢⠩⡂⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡡⡑⡅⡯⡪⡝⠀⠔⠀⠂⢁⠀⠂⡈⠄⠁⠂⡣⡻⣀⢗⡅⠀⠀⡆⠪⠨⡊⠌⡎⠔⡡⢂⠕⡡⢊⢐⢑⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡼⣝⢦⠈⠊⠀⠌⠠⠁⡈⠀⠄⢁⠠⠀⠡⠐⠐⡙⠜⠜⠀⠀⢀⣪⠨⡊⠔⡑⢜⠨⡐⡡⢂⠪⡐⡡⢂⠍⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡺⡽⡝⡈⠈⠄⢁⠈⠠⠈⡀⠅⠠⠈⡀⠂⠁⡈⠤⢀⡀⣔⢞⡮⣻⢠⢑⢬⢗⡽⣺⢲⡅⡊⠔⡐⠅⡊⢔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢍⢏⠕⢄⢁⠐⡠⣜⡲⡕⡶⣕⢖⡦⣄⢌⠀⠄⠐⢀⠨⡺⣳⢽⢝⢔⢵⢝⣗⢽⢮⡳⣽⡐⢅⠪⡈⡢⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠪⡪⠢⡣⢳⣱⢱⢵⠝⢎⢇⠫⡊⢇⢫⢒⢅⢄⢢⠢⢣⠱⡸⢜⡽⣕⢷⢽⢕⡯⣺⢌⢂⠪⡐⡜⡼⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠊⠆⢎⡕⡣⡣⡣⡢⣣⣑⢥⡱⡨⢎⢎⠢⡣⡣⢃⠣⡁⡳⡽⣕⢯⡳⡝⡕⡅⡆⡇⡇⡇⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠁⡃⡖⡎⡢⠣⡓⣕⢵⠹⠪⣄⢕⡨⣐⢔⢌⢬⢱⢬⢲⢱⢱⢱⡱⡹⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠎⡔⡌⢂⠣⠃⠇⡊⢎⠌⢇⢊⠮⣪⣪⢪⢎⢮⢣⡣⡣⡳⡱⡱⡱⡱⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡑⣜⢄⡂⠄⠠⠁⠐⠀⢅⢣⢑⢕⢬⠢⠡⢳⢱⢱⢱⢱⢱⢕⢕⠕⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡄⢗⡧⠧⣂⠆⡌⡄⡅⣇⠪⠢⢪⡪⣺⡪⡂⣏⢎⢇⠧⠓⠁⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢐⢨⡊⡪⣪⢪⢪⢪⢪⢪⠌⢸⡪⡞⡕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⡎⠄⢳⡹⠪⠫⠚⠜⠸⠨⠪⢊⢰⡹⣸⠪⡑⡑⢄⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠬⠊⠊⠔⠄⠀⠀⠀⠀⠀⠀⠘⠔⠀⠀⠀⠈⠈⠐⠡⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''')
+                    print(f'''You are so happy to have your new pokemon friend. You start to think about all of the great adventures
+                        will have together, and all of a sudden
+                        
+                        
+                        
+                        
+                        LOOK OUT!
+                        
+                        WHAT IS THAT???
+                        
+                        
+                        A WILD POKEMON APPEARED!
+                        
+                        ''')
+                    wild_encounter = input('What are you going to do? BATTLE or RUN? ')
+                    if wild_encounter.upper() == 'BATTLE':
+                        print(f'A wild Pansear appeared! That is a fire type pokemon, so your {starter_pokemon} type moves will be super effective!')
+                        sobble_moves = input('What move will Sobble use? WATERGUN of TACKLE? ')
+                        if sobble_moves.lower() == 'watergun':
+                            print("It's super effective! The wild Pansear fainted. Sobble leveled up!")
+                        elif sobble_moves.lower() == 'tackle':
+                            print('The wild pansear ran away!')
+                        else:
+                            print('That is not a move in your moveset!')
+                    elif wild_encounter.upper() == 'RUN':
+                        print('You got away safely')
+                    else:
+                        print('That is not one of the choices')
+                elif starter_pokemon.upper() == 'GRASS':
+                    print(f'Congratulations! You chose Grookey, the {starter_pokemon.lower()} type pokemon!')
+                    print(f'''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠄⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠅⠌⢜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠅⠢⡈⡊⡒⠤⡀⠀⠀⢀⠎⠌⢌⠌⡂⠅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠨⡈⡂⡂⡂⡢⢑⠌⡢⠀⡔⢅⠣⡑⡰⢈⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⡔⡨⢂⢊⠆⡕⡨⠱⡑⢔⠱⡈⡢⢡⠁⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢢⡑⢔⠑⢌⠜⢌⢢⠡⡃⡪⣰⢽⡹⣜⢼⣱⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡒⢖⠕⡍⡣⡩⡲⣕⣅⡊⡢⡑⡑⢜⢮⠾⠕⠏⠚⠘⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⢌⠼⡸⡸⡸⠜⠕⡳⢚⠨⠐⠌⢌⠢⢡⠑⢍⢑⠲⡠⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠁⠀⢀⠔⡑⠨⡐⠨⠨⡈⠢⡈⡂⢅⢑⠌⡌⡢⠡⡊⠜⢄⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠢⢑⠨⢐⠡⠨⠨⠨⡐⡁⡂⡂⡢⢂⢕⠰⠨⡊⠔⢅⢕⡐⢍⢢⢀⠀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠡⡑⠄⡑⡐⠌⠌⡌⣂⡂⣂⡂⡢⢂⠅⡎⠈⠣⢪⠨⡢⠂⢂⠐⡀⢑⠹⣎⢏⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡨⠢⡑⡐⡡⠂⢌⠜⠈⠠⠀⠄⠠⠀⠅⠑⢌⢆⠁⢂⠈⢆⠇⢈⠠⢀⢂⠠⠐⠨⣳⡳⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⣀⣠⢥⣑⢌⠢⠢⡱⠁⠂⡁⠄⠡⢀⠡⠐⢈⠐⢀⠙⢀⠂⡈⠨⠐⢀⠸⢯⣷⡌⠢⡁⠸⣺⢕⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤⡲⡩⡣⡫⡺⣜⢵⢕⣇⠪⡘⠄⡁⠁⠄⣼⣻⡷⣌⠂⡆⠐⡀⠌⠀⢄⢔⠔⡌⣀⡃⠀⣷⢿⠀⠰⡀⢯⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡣⡣⡣⡣⣫⢺⡪⡮⡳⣪⠣⢪⠂⠠⠁⣸⣏⠀⠹⣟⣦⠈⠢⠀⢂⠭⡱⡡⢣⢱⢡⢣⢢⣟⣽⠁⢀⢂⢗⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡱⡱⡱⡕⣗⢝⡎⡯⣪⢯⢸⠀⠌⠠⠸⣷⣄⣸⢯⡷⠀⠨⢈⢎⢕⡑⠌⡆⢕⢜⢸⠰⡱⠁⠀⡰⡑⡅⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢎⡗⣝⢎⢧⡫⣺⢪⣺⢐⠔⢈⠠⠈⢍⠿⡺⠵⠋⠀⠨⠠⡣⡢⢣⢱⢨⢢⠣⡱⡑⡕⣕⢪⠪⡚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢎⣗⢵⢝⢎⢧⡳⠡⡩⢄⠐⢀⠂⠢⠠⡀⡠⢐⠁⠌⡪⡸⡨⡢⢣⢊⢎⢜⢬⢮⡳⡱⡝⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠳⡽⣵⡳⡏⡎⡆⣅⢇⣄⡂⡈⢄⠠⢐⢀⢂⢄⡳⣱⢩⡺⣜⢼⢼⡪⣳⢕⢇⠗⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠈⠣⢇⢧⢣⢳⢸⢸⢱⢣⢳⢕⡳⡹⡸⡸⡸⡱⢧⣣⣳⠵⡝⡎⠃⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⢔⢆⢖⠲⣄⡀⠀⠀⠀⠀⠀⠀⠀⡔⡱⢱⢱⢕⢇⢗⢕⡕⡕⡕⣕⢕⢵⢹⢸⠱⠸⠔⠉⠈⢀⢀⣀⢄⢦⢢⢂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡪⡪⡪⡪⡪⡱⣑⠆⠀⠀⠀⠀⢀⠔⡑⠔⢌⠢⡑⢕⢕⢕⢕⢕⢝⢜⢜⢜⢜⢕⡲⡡⢃⠪⡪⡩⡱⡱⡘⡌⡎⡪⡪⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡳⡝⡮⡪⣎⢎⠎⠎⠈⠀⠀⢀⠔⡁⡊⠔⢅⠕⢌⢌⠢⡡⢃⠇⢇⠣⡑⢅⠇⡇⡇⣇⢇⢇⠕⡜⢌⢆⢣⠪⡪⡘⡌⡎⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢜⢮⣪⢳⡝⠀⠀⠀⠀⠀⠀⡐⠔⡨⠐⢌⠪⡐⠅⡇⠢⡑⢌⠢⡑⢅⠕⢌⠢⡡⡣⡣⡣⣣⢣⢇⢇⢇⢕⢅⢇⠕⠊⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡪⣎⢧⡃⠀⠀⠀⠀⠀⢰⠡⡑⡐⢅⢕⠨⡂⢕⢅⠕⢌⠢⡑⢌⢜⠨⡂⠕⠜⠚⠊⠣⠃⠓⠑⠉⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢧⢳⢕⢽⢄⠀⠀⠀⠀⡕⡌⠢⡡⡑⡐⡑⠬⡸⡠⡡⡑⢌⠢⡡⠪⡂⡪⡸⢥⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡹⣕⡳⡝⡦⡦⡴⣕⢵⢱⢢⢪⢨⠨⡊⢜⢔⠔⡌⡢⡑⡌⡧⡪⡲⡹⡸⡸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠘⠘⠮⠯⢯⢫⢧⡣⡣⣣⢣⢣⢫⢪⢣⢇⡣⡱⡑⡅⢇⡯⡎⡇⡗⡝⡜⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⡹⡸⡸⡱⡱⡕⣕⣗⢵⡱⡜⡜⡔⣯⢪⢎⢮⢪⡪⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢪⢗⢧⢳⢕⡇⠁⠑⡕⣇⢯⢺⡸⡳⣽⢮⠇⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠈⠀⠀⠘⠪⠓⠣⠫⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''')
+                    print(f'''You are so happy to have your new pokemon friend. You start to think about all of the great adventures
+                        will have together, and all of a sudden
+                        
+                        
+                        
+                        
+                        LOOK OUT!
+                        
+                        WHAT IS THAT???
+                        
+                        
+                        A WILD POKEMON APPEARED!
+                        
+                        ''')
+                    wild_encounter = input('What are you going to do? BATTLE or RUN? ')
+                    if wild_encounter.upper() == 'BATTLE':
+                        print(f'A wild Panpour appeared! That is a water type pokemon, so your {starter_pokemon} type moves will be super effective!')
+                        grookey_moves = input('What move will Grookey use? BRANCH POKE of TACKLE? ')
+                        if grookey_moves.lower() == 'branch poke':
+                            print("It's super effective! The wild Panpour fainted. Grookey leveled up!")
+                        elif grookey_moves.lower() == 'tackle':
+                            print('The wild panpour ran away!')
+                        else:
+                            print('That is not a move in your moveset!')
+                    elif wild_encounter.upper() == 'RUN':
+                        print('You got away safely')
+                    else:
+                        print('That is not one of the choices')
+                else:
+                    print('That is not one of the choices')
+            </code></pre>
+          </div>
+          
+          <div id="Meal Price" class="tabcontent">
+            <h3>Meal Price</h3>
+            <p>This is a meal price calculator that I made with python.</p>
+            <pre><code class="python">
+                child_meal = float(input('Please enter the price of a child meal:'))
+                adult_meal = float(input('Please enter the price of an adult meal: '))
+                children = int(input('Please enter the amount of children: '))
+                adults = int(input('Please enter the amount of adults: '))
+                sales_tax_rate = float(input('Please enter the sales tax rate: '))
+
+                print('\n')
+
+                subtotal = (child_meal * children) + (adult_meal * adults)
+                rnd_subtotal = round(subtotal, 2)
+                print('Your subtotal is $' + str(rnd_subtotal))
+                sales_tax = (subtotal * sales_tax_rate)/100
+                rnd_sales_tax = round(sales_tax, 2)
+                print('Your sales tax is $' + str(rnd_sales_tax))
+                total = subtotal + sales_tax
+                rnd_total = round(total, 2)
+                print('Your total is $' + str(rnd_total))
+                tip_percentage = float(input('Please enter the tip percentage you would like to give: '))
+                tip_total = rnd_total * (tip_percentage/100)
+                rnd_tip_total = round(tip_total, 2)
+                print('Thank you! Your tip is $' + str(rnd_tip_total) )
+                grand_total = rnd_tip_total + rnd_total
+                rnd_grand_total = round(grand_total,2)
+                print('Your grand total is $' + str(rnd_grand_total) + '\n')
+
+                payment_amount = float(input('Please enter the payment amount: '))
+                change = payment_amount - rnd_grand_total 
+                rnd_change = round(change, 2)
+                print('your change is $' + str(rnd_change))
+            </code></pre>
+          </div>
+
+          <script src="scripts/scripts.js"></script>
+    </main>
+    <footer>
+        <p><a href='site-plan.html'>Site Plan</a></p>
+    </footer>
+</body>
+</html>
