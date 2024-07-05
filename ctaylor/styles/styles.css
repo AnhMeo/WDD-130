@@ -61,9 +61,10 @@ main {
 #hero-msg{
   grid-column: 2/3;
   grid-row: 2/3;
-  background-color: #1226208c;
+  background-color: #122620b3;
   color: #E5E5E5;
   border-radius: 25px;
+  font-weight: 800;
 }
 #hero-msg h1{
   text-align: center;
