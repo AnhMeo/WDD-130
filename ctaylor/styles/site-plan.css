@@ -7,7 +7,7 @@ Fonts are separated by a | */
   /* change the values below to your colors from your palette */
   --primary-color: #122620   ;
   --secondary-color: #E5E5E5 ;
-  --accent1-color: #FCA311;
+  --accent1-color: #3e846f;
   --accent2-color: #14213D;
 
   /* change the values below to your chosen font(s) */
@@ -22,7 +22,7 @@ Fonts are separated by a | */
   --paragraph-background-color: #122620  ;
   --nav-link-color: #E5E5E5;
   --nav-background-color: #14213D;
-  --nav-hover-link-color: #FCA311;
+  --nav-hover-link-color: #3e846f;
   --nav-hover-background-color: #122620;
 }
 
