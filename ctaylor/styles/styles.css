@@ -323,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
     nav a {
         display: block;
         padding: 15px;
+        font-size: 0.8em;
     }
     #hero {
         margin-top: 0;
