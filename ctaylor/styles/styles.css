@@ -262,10 +262,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 100px;
   padding-bottom: 50px;
   text-align: center;
+  font-size: 1.5em;
 }
 
 .portfoliotext {
   text-align: center;
+  font-size: 1.25em;
 }
 
 /* Style the tab */
@@ -322,7 +324,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     nav a {
         display: block;
-        padding: 15px;
+        padding: 5px;
         font-size: 0.8em;
     }
     #hero {
