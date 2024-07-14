@@ -11,9 +11,7 @@ html {
   color: #E5E5E5;
   border-left: none;
 }
-header {
 
-}
 .logo{
   width: 70px;
 }
@@ -311,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-  
+
 /* mobile optimization */
 
   @media screen and (max-width: 900px) {
