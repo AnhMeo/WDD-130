@@ -479,45 +479,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
 }
 
-/* mobile optimization */
-
-  @media screen and (max-width: 900px) {
-    #hero, .home-grid {
-        display: block;
-        height: auto;
-    }
-    nav, footer {
-        flex-direction: column;
-    }
-    nav a {
-        display: block;
-        padding: 5px;
-        font-size: 0.8em;
-    }
-    #hero {
-        margin-top: 0;
-    }
-    #hero-msg {
-        margin-top: 0;
-    }
-    #hero-msg h4 {
-        display: none;
-    }
-    #hero-msg h1 {
-        color: #6f7364;
-    }
-    .home-title {
-        font-size: 25px;
-    }
-    #background {
-        display: none;
-    }
-
-    footer {
-        margin-top: 25px;
-    }
-}
-
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
@@ -538,6 +499,6 @@ h1, h2, h3, h4, h5, h6 {
   .topnav.responsive a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: right;
   }
 }
