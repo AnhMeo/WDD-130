@@ -307,10 +307,167 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 
+/* Achievements */
 
+#ach_hero {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 20% 20% 20%;
+  padding-bottom: 250px;
+}
 
+#ach_herobox {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
 
+#ach_herotxt {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #122620ce;
+  color: #E5E5E5;
+}
 
+#ach_herotxt p {
+  text-align: center;
+  color: #E5E5E5;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.kingsummit {
+  width: 100%;
+}
+
+#networking {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: .25fr .5fr .25fr;
+  align-items: center;
+}
+
+#cisconetwkbox {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  z-index: -1;
+}
+
+.ciscontwk {
+  width: 100%;
+  height: 100%;
+}
+
+#nettxt {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #3e846f;
+  color: #E5E5E5;
+  border-radius: 25px;
+}
+
+#nettxt p {
+  text-align: center;
+  color: #E5E5E5;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#cyber {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: .25fr .5fr .25fr;
+  align-items: center;
+}
+
+#cybbox {
+  grid-column: 2/3;
+  grid-row: 1/4;
+  z-index: -1;
+}
+
+.ciscocyb {
+  width: 100%;
+  height: 100%;
+}
+
+#cybertxt {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: #3e846f;
+  color: #E5E5E5;
+  border-radius: 25px;
+}
+
+#cybertxt p {
+  text-align: center;
+  color: #E5E5E5;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#ACTFL {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: .25fr .5fr .25fr;
+  align-items: center;
+}
+
+#actflbox {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  z-index: -1;
+}
+
+.act {
+  width: 100%;
+  height: 100%;
+}
+#actfltxt {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: #3e846f;
+  color: #E5E5E5;
+  border-radius: 25px;
+}
+
+#actfltxt p {
+  text-align: center;
+  color: #E5E5E5;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+#fam {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-template-rows: .25fr .5fr .25fr;
+  align-items: center;
+}
+
+#fambox {
+  grid-column: 2/3;
+  grid-row: 1/4;
+}
+
+.family {
+  width: 100%;
+  height: 100%;
+}
+
+#famtxt {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: #3e846f;
+  color: #E5E5E5;
+  border-radius: 25px;
+}
+
+#famtxt p {
+  text-align: center;
+  color: #E5E5E5;
+  font-size: 1.5em;
+  padding: 10px;
+}
 
 /* mobile optimization */
 
